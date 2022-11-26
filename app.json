@@ -19,7 +19,7 @@
         },
         "page2": {
           "title": "MBC 2",
-          "url": "https://AbderSL.github.io/MBCLIVE/1.htm",
+          "url": "https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/arriadia/hls_snrt/arriadia-avc1_400000=2-mp4a_130400_qad=1.m3u8",
           "img": "https://abdersl.github.io/MBCLIVE/2.jpg"
         },
         "page3": {
@@ -34,7 +34,7 @@
         },
         "page5": {
           "title": "MBC 3",
-          "url": "https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/arriadia/hls_snrt/index.m3u8",
+          "url": "https://derste247liveint.akamaized.net/hls/live/662735/daserste_int/master_1920p_5000.m3u8",
           "img": "https://abdersl.github.io/MBCLIVE/3.jpg"
             
         },
