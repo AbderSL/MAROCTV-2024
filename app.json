@@ -1,68 +1,74 @@
 {
     "app": {
-        "name": "MBC CHANNELS",
-        "color": "#f76dc0"
+        "name": "مشاهدة جميع القنوات المغربية",
+        "color": "#5D7276"
     },
-    
-    
-    "ads":{
-        "bannerId": "3784762348272968_3784764311606105",
-        "interstitialId": "3784762348272968_3784765791605957"
-    },
-    
-    
-    "content": {
+  
+  
+  "ads":{
+     "ads_type": "x",
+      "bannerId": "x",
+      "interstitialId": "x",
+     "ironsource_id": "x"
+  },
+  
+  
+     "content": {
         "page1": {
-          "title": "MBC 1",
-          "url": "https://shls-mbc1na-prod-dub.shahid.net/out/v1/84ab37e99d6e4b16b33c6600f94f6ccb/index_8.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
+          "title": "2M Maroc  الثانية المغربية",
+          "url": "https://AbderSL.github.io/MarocTV-2022/2M.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/2M.jpg"
+
         },
         "page2": {
-          "title": "MBC 2",
-          "url": "https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/arriadia/hls_snrt/arriadia-avc1_400000=2-mp4a_130400_qad=1.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/2.jpg"
+          "title": "Aloula  الأولى المغربية",
+          "url": "https://AbderSL.github.io/MarocTV-2022/Aloula.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/1.jpg"           
+
         },
         "page3": {
-          "title": "MBC ACTION",
-          "url": "https://s6.hopslan.com/zdfg11/tracks-v1a1/mono.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/A.jpg"
+          "title": "Almeghribia  الخامسة المغربية 5",
+          "url": "https://AbderSL.github.io/MarocTV-2022/Almeghribia.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/5.jpg"
         },
         "page4": {
-          "title": "MBC MAX",
-          "url": "http://r32g5k9gm3.a5ge6t4sve79r.com/live/ramdisk/2m_monde/hls_video_ts_tuhawxpiemz257adfc/2m_monde-avc1_400000=2-mp4a_130400_qad=1.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/max.jpg"
+          "title": "Arriyadia  الرياضية المغربية",
+          "url": "https://AbderSL.github.io/MarocTV-2022/Arriyadia.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/3.jpg"
         },
         "page5": {
-          "title": "MBC 3",
-          "url": "https://derste247liveint.akamaized.net/hls/live/662735/daserste_int/master_1920p_5000.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/3.jpg"
-            
+          "title": "Attaqafia  الرابعة التقافية",
+          "url": "https://AbderSL.github.io/MarocTV-2022/Altaqafia.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/4.jpg"
         },
         "page6": {
-          "title": "MBC 4",
-          "url": "https://shls-mbc4-prod-dub.shahid.net/out/v1/c08681f81775496ab4afa2bac7ae7638/index_3.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/4.jpg"
+          "title": "Assadissa قناة محمد السادس",
+          "url": "https://AbderSL.github.io/MarocTV-2022/Assadissa.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/6.jpg"
         },
         "page7": {
-          "title": "MBC 5",
-          "url": "https://shls-mbc5-prod-dub.shahid.net/out/v1/2720564b6a4641658fdfb6884b160da2/index_3.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/5.jpg"
-        },
+          "title": "Tamazight تمازيغت",
+          "url": "https://AbderSL.github.io/MarocTV-2022/Tamazight.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/8.jpg"
+	    },
         "page8": {
-          "title": "MBC Bollyood",
-          "url": "https://shls-mbcbollywood-prod-dub.shahid.net/out/v1/a79c9d7ef2a64a54a64d5c4567b3462a/index_3.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/6.jpg"
-        },
+          "title": "Medi 1 TV ميدي1",
+          "url": "https://AbderSL.github.io/MarocTV-2022/Medi1TV.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/M1.jpg"
+	    },
         "page9": {
-          "title": "MBC MASR",
-          "url": "https://shls-masr-prod-dub.shahid.net/out/v1/b7093401da27496797a8949de23f4578/index_3.m3u8",
-          "img": "https://abdersl.github.io/MBCLIVE/7.jpg"
-        },
+          "title": "Chada tv شدى",
+          "url": "https://AbderSL.github.io/MarocTV-2022/Chada.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/Chada.jpg"
+	    },
         "page10": {
-          "title": "MBC DRAMA",
-          "url": "https://sq66x7erwr8mazxk.cdnexpress23.net:8443/hls/t7mvowjb99.m3u8?s=rDu6mJPxjbKfYhIVqf4Y_w&e=1669522783",
-          "img": "https://abdersl.github.io/test/9.jpg"
+          "title": "M24TV المغرب 24",
+          "url": "https://AbderSL.github.io/MarocTV-2022/M24.html",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/M24.jpg"
+		
+	
 
         }
-      }
+
+        }
 }
