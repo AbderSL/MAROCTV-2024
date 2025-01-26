@@ -1,1 +1,34 @@
-<iframe width="640" height="360" src="https://ok.ru/videoembed/9382206971466?nochat=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بث مباشر</title>
+  <style>
+    /* جعل iframe متجاوبًا */
+    .responsive-iframe {
+      position: relative;
+      width: 100%; /* عرض الفيديو يملأ الشاشة بالكامل */
+      padding-top: 56.25%; /* نسبة العرض إلى الارتفاع 16:9 */
+    }
+
+    .responsive-iframe iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="responsive-iframe">
+    <iframe 
+      src="https://ok.ru/videoembed/9382206971466?nochat=1" 
+      allow="autoplay; fullscreen" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</body>
+</html>
