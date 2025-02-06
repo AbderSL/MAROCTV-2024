@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2M Live</title>
+  <title>Live Stream</title>
   <style>
     body {
       margin: 0;
@@ -24,30 +24,10 @@
   </style>
 </head>
 <body>
-  <!-- تضمين الموقع -->
-  <iframe id="websiteFrame" src="http://azrotv.com/iphone/arabic/ch6/2mdirect.php" loading="lazy"></iframe>
+  <!-- تضمين الموقع داخل iframe -->
+  <iframe src="http://dagav.com/v/arabic/arab1/2m.php" loading="lazy"></iframe>
 
   <!-- رسالة تنبيه -->
-  <div class="notice">Live</div>
-
-  <script>
-    // منع ظهور عناصر الإعلانات داخل iframe (إذا سمح الموقع بالوصول)
-    const iframe = document.getElementById("websiteFrame");
-
-    iframe.onload = function() {
-      // هذا الكود قد لا يعمل بسبب قيود CORS أو سياسة الأمان للموقع المضمن
-      try {
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-        // العثور على العناصر الإعلانية بناءً على ID أو Class وحذفها
-        const ads = iframeDoc.querySelectorAll(".ad, .ads, [id*='ad'], [class*='ad']");
-        ads.forEach(ad => ad.remove());
-
-        console.log("تمت إزالة الإعلانات بنجاح");
-      } catch (error) {
-        console.warn("لا يمكن الوصول إلى محتوى iframe لمنع الإعلانات بسبب إعدادات الأمان.");
-      }
-    };
-  </script>
+  <div class="notice">Live Stream</div>
 </body>
 </html>
