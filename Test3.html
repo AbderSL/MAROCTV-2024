@@ -25,29 +25,18 @@
 </head>
 <body>
   <!-- تضمين الموقع -->
-  <iframe id="websiteFrame" src="http://dagav.com/v/arabic/arab1/2m.php" loading="lazy"></iframe>
+  <iframe id="websiteFrame" src="" loading="lazy"></iframe>
 
   <!-- رسالة تنبيه -->
   <div class="notice">Live</div>
 
   <script>
-    // منع ظهور عناصر الإعلانات داخل iframe (إذا سمح الموقع بالوصول)
+    // رابط البث المتغير
+    const liveStreamUrl = "http://dagav.com/v/arabic/arab1/2m.php"; // تحديث الرابط إذا تغير
+
+    // تحديث مصدر الـ iframe
     const iframe = document.getElementById("websiteFrame");
-
-    iframe.onload = function() {
-      // هذا الكود قد لا يعمل بسبب قيود CORS أو سياسة الأمان للموقع المضمن
-      try {
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-        // العثور على العناصر الإعلانية بناءً على ID أو Class وحذفها
-        const ads = iframeDoc.querySelectorAll(".ad, .ads, [id*='ad'], [class*='ad']");
-        ads.forEach(ad => ad.remove());
-
-        console.log("تمت إزالة الإعلانات بنجاح");
-      } catch (error) {
-        console.warn("لا يمكن الوصول إلى محتوى iframe لمنع الإعلانات بسبب إعدادات الأمان.");
-      }
-    };
+    iframe.src = liveStreamUrl;
   </script>
 </body>
 </html>
