@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2M Live </title>
+  <title>2M Live</title>
   <style>
     body {
       margin: 0;
@@ -25,7 +25,7 @@
 </head>
 <body>
   <!-- تضمين الموقع -->
-  <iframe id="websiteFrame" src="http://dagav.com/v/arabic/arab1/2m.php#google_vignette"></iframe>
+  <iframe id="websiteFrame" src="http://dagav.com/v/arabic/arab1/2m.php" loading="lazy"></iframe>
 
   <!-- رسالة تنبيه -->
   <div class="notice">Live</div>
@@ -35,6 +35,7 @@
     const iframe = document.getElementById("websiteFrame");
 
     iframe.onload = function() {
+      // هذا الكود قد لا يعمل بسبب قيود CORS أو سياسة الأمان للموقع المضمن
       try {
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
