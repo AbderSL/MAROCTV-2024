@@ -1,33 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Stream</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #f3f3f3;
-    }
-    iframe {
-      width: 100%;
-      height: 90vh;  /* يحدد الارتفاع ليشمل معظم الصفحة */
-      border: none;
-    }
-    .notice {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 16px;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تضمين موقع</title>
 </head>
 <body>
-  <!-- تضمين الموقع داخل iframe -->
-  <iframe src="https://dagav.com/v/arabic/arab1/2m.php" loading="lazy"></iframe>
-
-  <!-- رسالة تنبيه -->
-  <div class="notice">Live Stream</div>
+    <h1>تضمين الموقع باستخدام iframe</h1>
+    <iframe src="https://dagav.com/v/arabic/arab1/2m.php" width="100%" height="600px" frameborder="0">
+        متصفحك لا يدعم عرض iframe.
+    </iframe>
 </body>
 </html>
