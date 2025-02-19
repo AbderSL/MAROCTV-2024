@@ -1,14 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تضمين موقع</title>
+    <title>تضمين موقع بدون إعلانات</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>test</h1>
-    <iframe src="http://dagav.com/v/arabic/arab1/2m.php" width="100%" height="600px" frameborder="0">
-        متصفحك لا يدعم عرض iframe.
-    </iframe>
+
+    <iframe id="embeddedSite" src="https://livetv.aflam4you.pro/2m-live-maroc-watch-now_8.html"></iframe>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let iframe = document.getElementById("embeddedSite");
+
+            // محاولة منع الإعلانات باستخدام محتوى آمن
+            iframe.onload = function() {
+                try {
+                    let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    
+                    // إزالة العناصر الإعلانية إذا كانت معروفة
+                    let ads = iframeDoc.querySelectorAll(".ads, .ad-banner, .advertisement");
+                    ads.forEach(ad => ad.style.display = "none");
+                    
+                } catch (error) {
+                    console.warn("لا يمكن التحكم في محتوى الموقع بسبب سياسة CORS.");
+                }
+            };
+        });
+    </script>
+
 </body>
 </html>
