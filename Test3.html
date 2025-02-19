@@ -20,27 +20,8 @@
 </head>
 <body>
 
-<iframe width="560" height="315" src="https://www.elahmad.com/tv/arabic-tv-online.php?id=arryadia" style="border:none;" allowfullscreen allow="autoplay; fullscreen; picture-in-picture; xr-spatial-tracking; encrypted-media"></iframe>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let iframe = document.getElementById("embeddedSite");
-
-            // محاولة منع الإعلانات باستخدام محتوى آمن
-            iframe.onload = function() {
-                try {
-                    let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                    
-                    // إزالة العناصر الإعلانية إذا كانت معروفة
-                    let ads = iframeDoc.querySelectorAll(".ads, .ad-banner, .advertisement");
-                    ads.forEach(ad => ad.style.display = "none");
-                    
-                } catch (error) {
-                    console.warn("لا يمكن التحكم في محتوى الموقع بسبب سياسة CORS.");
-                }
-            };
-        });
-    </script>
-
+<iframe width="560" height="315" src="https://www.elahmad.com/tv/arabic-tv-online.php?id=arryadia" style="border:none;" allowfullscreen allow="autoplay; fullscreen; picture-in-picture; xr-spatial-tracking; encrypted-media"></iframe
+                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                   
 </body>
 </html>
