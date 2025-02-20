@@ -1,12 +1,29 @@
+                                                                                                                                                                                                          
 <!DOCTYPE html>
 <html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عرض القناة</title>
-</head>
+
 <body>
-    <iframe width="100%" height="1000px" src="http://www.elahmad.com/tv/arabic-tv-online.php?id=arryadia" style="border:none;" allowfullscreen allow="autoplay; fullscreen; picture-in-picture; xr-spatial-tracking; encrypted-media"></iframe>
+
+<iframe id="myIframe" 
+        src="http://www.elahmad.com/tv/arabic-tv-online.php?id=arryadia"
+        width="100%" height="1000px" frameborder="0" allowfullscreen>
+</iframe>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var iframe = document.getElementById("myIframe");
+        
+        iframe.onload = function() {
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            // جرب إخفاء العناصر الإعلانية بناءً على معرفات أو فئات الـ CSS
+            var ads = iframeDoc.querySelectorAll(".ads, .ad-banner, .popup-ad");
+            ads.forEach(function(ad) {
+                ad.style.display = "none";
+            });
+        };
+    });
+</script>                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                   
 </body>
 </html>
-                                                                                                                                                                                                           
