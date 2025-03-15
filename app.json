@@ -11,7 +11,16 @@
       "interstitialId": "1108847250316145_1299033177964217",
      "ironsource_id": ""
   },
-  "page2": {
+  
+  
+     "content": {
+        "page1": {
+          "title": "2M Maroc  الثانية المغربية",
+          "url": "https://www.elahmad.com/tv/live/shahid_shaka.php?id=2mmonde",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/2M.jpg"
+
+        },
+        "page2": {
           "title": "Aloula  الأولى المغربية",
           "url": "https://www.elahmad.com/tv/mobiletv/glarb.php?id=aloula1",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/1.jpg"           
