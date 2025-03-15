@@ -11,18 +11,9 @@
       "interstitialId": "1108847250316145_1299033177964217",
      "ironsource_id": ""
   },
-  
-  
-      "content": {
-        "page1": {
-          "title": "2M Maroc  الثانية المغربية",
-          "url": "https://www.elahmad.com/tv/live/shahid_shaka.php?id=2mmonde",
-          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/2M.jpg"
-
-        },
-        "page2": {
+  "page2": {
           "title": "Aloula  الأولى المغربية",
-          "url": "https://snrtlive.ma/fr/al-aoula",
+          "url": "https://www.elahmad.com/tv/mobiletv/glarb.php?id=aloula1",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/1.jpg"           
 
         },
@@ -30,6 +21,11 @@
           "title": "Almeghribia  الخامسة المغربية 5",
           "url": "https://snrtlive.ma/ar/almaghribia",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/5.jpg"
+        },
+        "page4": {
+          "title": "Arriyadia  الرياضية المغربية",
+          "url": "https://www.elahmad.com/tv/mobiletv/glarb.php?id=arryadia1",
+          "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/3.jpg"
         },
         "page4": {
           "title": "Arriyadia  الرياضية المغربية",
