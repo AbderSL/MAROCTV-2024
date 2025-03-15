@@ -13,7 +13,7 @@
   },
   
   
-     "content": {
+      "content": {
         "page1": {
           "title": "2M Maroc  الثانية المغربية",
           "url": "https://www.elahmad.com/tv/live/shahid_shaka.php?id=2mmonde",
@@ -22,34 +22,33 @@
         },
         "page2": {
           "title": "Aloula  الأولى المغربية",
-          "url": "https://www.elahmad.com/tv/mobiletv/glarb.php?id=aloula1",
+          "url": "https://abdersl.github.io/MarocTV-2022/Aloula.html",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/1.jpg"           
 
         },
         "page3": {
           "title": "Almeghribia  الخامسة المغربية 5",
-          "url": "https://snrtlive.ma/ar/almaghribia",
+          "url": "https://abdersl.github.io/MarocTV-2022/Almeghribia.html",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/5.jpg"
         },
         "page4": {
           "title": "Arriyadia  الرياضية المغربية",
           "url": "https://abdersl.github.io/MarocTV-2022/Arriyadia.html",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/3.jpg"
-
         },
         "page5": {
           "title": "Attaqafia  الرابعة التقافية",
-          "url": "https://snrtlive.ma/ar/athaqafia",
+          "url": "https://abdersl.github.io/MarocTV-2022/Altaqafia.html",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/4.jpg"
         },
         "page6": {
           "title": "Assadissa قناة محمد السادس",
-          "url": "https://snrtlive.ma/ar/assadissa",
+          "url": "https://abdersl.github.io/MarocTV-2022/Assadissa.html",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/6.jpg"
         },
         "page7": {
           "title": "Tamazight تمازيغت",
-          "url": "https://snrtlive.ma/ar/tamazight",
+          "url": "https://abdersl.github.io/MarocTV-2022/Tamazight.html",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/8.jpg"
 	    },
         "page8": {
@@ -66,7 +65,8 @@
           "title": "M24TV المغرب 24",
           "url": "https://AbderSL.github.io/MarocTV-2022/M24.html",
           "img": "https://AbderSL.github.io/MarocTV-2022/LOGO/M24.jpg"
-
+		
+	
 
         }
 
