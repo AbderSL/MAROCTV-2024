@@ -32,10 +32,15 @@
 
   <script>
     const video = document.getElementById('video');
-    const videoSrc = 'https://fl1002.bozztv.com/ga-aflamtv7/tracks-v1a1/mono.ts.m3u8'; 
+    const videoSrc = 'https://cdn.live.easybroadcast.io/abr_corp/73_arryadia_k2tgcj0/corp/73_arryadia_k2tgcj0_480p/chunks_dvr.m3u8?token=405AWsF6ADa3vbue1WrPLpx0LOrg2F9mx9lm0iOatSo&expires=1759153436&token_path=%2Fabr_corp%2F73_arryadia_k2tgcj0';
 
     if (Hls.isSupported()) {
-      const hls = new Hls();
+      const hls = new Hls({
+        // بعض السيرفرات تتطلب هذه الإعدادات
+        xhrSetup: function (xhr) {
+          xhr.withCredentials = false;
+        }
+      });
       hls.loadSource(videoSrc);
       hls.attachMedia(video);
       hls.on(Hls.Events.MANIFEST_PARSED, function () {
