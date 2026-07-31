@@ -1,1 +1,168 @@
-<iframe width="560" height="315" src="https://www.elahmad.ch/tv/arabic-tv-online.php?id=alaoulaeurope" style="border:none;" allowfullscreen allow="autoplay; fullscreen; picture-in-picture; xr-spatial-tracking; encrypted-media"></iframe>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بث مباشر - الرياضية</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #0b0f0d;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .player-container {
+    width: 100%;
+    max-width: 960px;
+    background: #141a17;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border: 1px solid #1f2a24;
+  }
+
+  .player-header {
+    padding: 16px 20px;
+    background: linear-gradient(90deg, #047857, #064e3b);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-title h1 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .logo-dot {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fff;
+  }
+
+  .live-badge {
+    background: #dc2626;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .live-dot {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: blink 1.4s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* نسبة 16:9 */
+    background: #000;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .player-footer {
+    padding: 12px 20px;
+    color: #8a9a92;
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid #1f2a24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .player-footer a {
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .fallback-note {
+    max-width: 960px;
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: #141a17;
+    border: 1px solid #1f2a24;
+    border-radius: 10px;
+    color: #8a9a92;
+    font-size: 12.5px;
+    text-align: center;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<div class="player-container">
+  <div class="player-header">
+    <div class="header-title">
+      <span class="logo-dot"></span>
+      <h1>القناة الرياضية المغربية - الرياضية</h1>
+    </div>
+    <span class="live-badge"><span class="live-dot"></span> مباشر</span>
+  </div>
+
+  <div class="video-wrapper">
+    <iframe
+      src="https://snrtlive.ma/ar/arryadia"
+      allowfullscreen
+      allow="autoplay; encrypted-media; picture-in-picture"
+      referrerpolicy="no-referrer-when-downgrade"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="player-footer">
+    المصدر: <a href="https://snrtlive.ma/ar/arryadia" target="_blank">snrtlive.ma</a>
+  </div>
+</div>
+
+<div class="fallback-note">
+  في حال عدم ظهور البث داخل الإطار، فهذا يعني أن الموقع يمنع التضمين (X-Frame-Options)،
+  ويمكنك حينها فتح الرابط مباشرة عبر الزر أعلاه.
+</div>
+
+</body>
+</html>
