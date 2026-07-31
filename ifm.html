@@ -1,168 +1,154 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بث مباشر - الرياضية</title>
+<title>مشاهدة القناة</title>
+
 <style>
-  * {
+  body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    text-align: center;
   }
 
-  body {
-    background: #0b0f0d;
-    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-    min-height: 100vh;
+  header {
+    background: #222;
+    padding: 10px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-  }
-
-  .player-container {
-    width: 100%;
-    max-width: 960px;
-    background: #141a17;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    border: 1px solid #1f2a24;
-  }
-
-  .player-header {
-    padding: 16px 20px;
-    background: linear-gradient(90deg, #047857, #064e3b);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .header-title {
-    display: flex;
-    align-items: center;
     gap: 10px;
   }
 
-  .header-title h1 {
-    font-size: 18px;
-    font-weight: 600;
+  header img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
   }
 
-  .logo-dot {
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #fff;
+  header h1 {
+    font-size: 16px;
+    margin: 0;
   }
 
-  .live-badge {
-    background: #dc2626;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .live-dot {
-    width: 8px;
-    height: 8px;
-    background: #fff;
-    border-radius: 50%;
-    animation: blink 1.4s infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  .video-wrapper {
-    position: relative;
+  video {
     width: 100%;
-    padding-top: 56.25%; /* نسبة 16:9 */
+    height: auto;
     background: #000;
   }
 
-  .video-wrapper iframe {
+  .live {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+    top: 12px;
+    left: 12px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
   }
 
-  .player-footer {
-    padding: 12px 20px;
-    color: #8a9a92;
-    font-size: 13px;
-    text-align: center;
-    border-top: 1px solid #1f2a24;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    flex-wrap: wrap;
+  .container {
+    position: relative;
   }
 
-  .player-footer a {
-    color: #10b981;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .fallback-note {
-    max-width: 960px;
-    width: 100%;
-    margin-top: 14px;
-    padding: 12px 16px;
-    background: #141a17;
-    border: 1px solid #1f2a24;
-    border-radius: 10px;
-    color: #8a9a92;
-    font-size: 12.5px;
-    text-align: center;
-    line-height: 1.7;
+  .status {
+    padding: 12px;
+    font-size: 14px;
+    color: #ccc;
   }
 </style>
 </head>
 <body>
 
-<div class="player-container">
-  <div class="player-header">
-    <div class="header-title">
-      <span class="logo-dot"></span>
-      <h1>القناة الرياضية المغربية - الرياضية</h1>
-    </div>
-    <span class="live-badge"><span class="live-dot"></span> مباشر</span>
-  </div>
+<header>
+  <img id="logo" src="https://AbderSL.github.io/MarocTV-2022/LOGO/7.jpg" alt="logo">
+  <h1 id="title">القناة</h1>
+</header>
 
-  <div class="video-wrapper">
-    <iframe
-      src="https://snrtlive.ma/ar/arryadia"
-      allowfullscreen
-      allow="autoplay; encrypted-media; picture-in-picture"
-      referrerpolicy="no-referrer-when-downgrade"
-      loading="lazy">
-    </iframe>
-  </div>
-
-  <div class="player-footer">
-    المصدر: <a href="https://snrtlive.ma/ar/arryadia" target="_blank">snrtlive.ma</a>
-  </div>
+<div class="container">
+  <span class="live">LIVE</span>
+  <!-- muted ضروري لكي يعمل autoplay تلقائياً في أغلب المتصفحات -->
+  <video id="video" controls autoplay playsinline muted></video>
 </div>
 
-<div class="fallback-note">
-  في حال عدم ظهور البث داخل الإطار، فهذا يعني أن الموقع يمنع التضمين (X-Frame-Options)،
-  ويمكنك حينها فتح الرابط مباشرة عبر الزر أعلاه.
-</div>
+<p class="status" id="status">جاري تحميل البث...</p>
+
+<script>
+  // رابط البث
+  const STREAM_URL = "https://games2.elahmad.store/tv10_www_elahmad._aflam_maroc/tracks-v1a1/mono.m3u8?token=ae87bf142ed25f5c429bc4c95358748eeee62cb5-65d3f6cd4fd82322fa3f316484a7f5d0-1785528289-1785526489";
+
+  const video = document.getElementById("video");
+  const statusEl = document.getElementById("status");
+
+  function setStatus(text) {
+    if (statusEl) statusEl.textContent = text;
+  }
+
+  function tryAutoplay() {
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setStatus("");
+        })
+        .catch((err) => {
+          // بعض المتصفحات تمنع autoplay حتى مع muted، نعرض رسالة بديلة
+          setStatus("اضغط على زر التشغيل لبدء المشاهدة ▶️");
+          console.warn("Autoplay blocked:", err);
+        });
+    }
+  }
+
+  function loadWithHlsJs() {
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/hls.js@1.4.8";
+    script.onload = () => {
+      if (typeof Hls !== "undefined" && Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(STREAM_URL);
+        hls.attachMedia(video);
+
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          tryAutoplay();
+        });
+
+        hls.on(Hls.Events.ERROR, (event, data) => {
+          if (data.fatal) {
+            setStatus("تعذر تشغيل البث، قد يكون الرابط منتهي الصلاحية ❌");
+            console.error("HLS fatal error:", data);
+          }
+        });
+      } else {
+        setStatus("متصفحك لا يدعم تشغيل هذا البث 😕");
+      }
+    };
+    script.onerror = () => {
+      setStatus("فشل تحميل مكتبة التشغيل، تحقق من الاتصال بالإنترنت");
+    };
+    document.body.appendChild(script);
+  }
+
+  function initPlayer() {
+    if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      // دعم HLS أصلي (Safari, iOS)
+      video.src = STREAM_URL;
+      video.addEventListener("loadedmetadata", tryAutoplay);
+      video.addEventListener("error", () => {
+        setStatus("تعذر تشغيل البث، قد يكون الرابط منتهي الصلاحية ❌");
+      });
+    } else {
+      // باقي المتصفحات: نحمّل hls.js أولاً ثم نتحقق من دعمه
+      loadWithHlsJs();
+    }
+  }
+
+  initPlayer();
+</script>
 
 </body>
 </html>
