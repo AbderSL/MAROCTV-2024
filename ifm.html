@@ -40,6 +40,13 @@
     background: #000;
   }
 
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+  }
+
   .live {
     position: absolute;
     top: 12px;
@@ -72,83 +79,19 @@
 
 <div class="container">
   <span class="live">LIVE</span>
-  <!-- muted ضروري لكي يعمل autoplay تلقائياً في أغلب المتصفحات -->
-  <video id="video" controls autoplay playsinline muted></video>
+  <!--
+    نستخدم بث يوتيوب الرسمي للقناة الثانية (2M) مباشرة.
+    Channel ID: UCvbrGTGpXtCZNbCvfjr_aew  (Handle: @2mmaroc32)
+    autoplay=1 + mute=1 ضروريان لكي يعمل التشغيل التلقائي في أغلب المتصفحات.
+  -->
+  <iframe
+    id="player"
+    src="https://www.youtube.com/embed/live_stream?channel=UCvbrGTGpXtCZNbCvfjr_aew&autoplay=1&mute=1"
+    title="2M Maroc Live"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 </div>
-
-<p class="status" id="status">جاري تحميل البث...</p>
-
-<script>
-  // رابط البث
-  const STREAM_URL = "https://games2.elahmad.store/tv10_www_elahmad._aflam_maroc/tracks-v1a1/mono.m3u8?token=d76f2ec514419443da12b944b8cfea7dba08b27a-e752fb7bc99a36a185a6e29d4ebdf145-1785531906-1785530106";
-
-  const video = document.getElementById("video");
-  const statusEl = document.getElementById("status");
-
-  function setStatus(text) {
-    if (statusEl) statusEl.textContent = text;
-  }
-
-  function tryAutoplay() {
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          setStatus("");
-        })
-        .catch((err) => {
-          // بعض المتصفحات تمنع autoplay حتى مع muted، نعرض رسالة بديلة
-          setStatus("اضغط على زر التشغيل لبدء المشاهدة ▶️");
-          console.warn("Autoplay blocked:", err);
-        });
-    }
-  }
-
-  function loadWithHlsJs() {
-    const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/hls.js@1.4.8";
-    script.onload = () => {
-      if (typeof Hls !== "undefined" && Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(STREAM_URL);
-        hls.attachMedia(video);
-
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
-          tryAutoplay();
-        });
-
-        hls.on(Hls.Events.ERROR, (event, data) => {
-          if (data.fatal) {
-            setStatus("تعذر تشغيل البث، قد يكون الرابط منتهي الصلاحية ❌");
-            console.error("HLS fatal error:", data);
-          }
-        });
-      } else {
-        setStatus("متصفحك لا يدعم تشغيل هذا البث 😕");
-      }
-    };
-    script.onerror = () => {
-      setStatus("فشل تحميل مكتبة التشغيل، تحقق من الاتصال بالإنترنت");
-    };
-    document.body.appendChild(script);
-  }
-
-  function initPlayer() {
-    if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // دعم HLS أصلي (Safari, iOS)
-      video.src = STREAM_URL;
-      video.addEventListener("loadedmetadata", tryAutoplay);
-      video.addEventListener("error", () => {
-        setStatus("تعذر تشغيل البث، قد يكون الرابط منتهي الصلاحية ❌");
-      });
-    } else {
-      // باقي المتصفحات: نحمّل hls.js أولاً ثم نتحقق من دعمه
-      loadWithHlsJs();
-    }
-  }
-
-  initPlayer();
-</script>
 
 </body>
 </html>
